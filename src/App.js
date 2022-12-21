@@ -1,5 +1,8 @@
 import { Component } from "react";
+import Layout from "./components/Layout/Layout";
+import Navbar from "./components/Navbar/Navbar";
 import Productos from "./components/Productos";
+import Title from "./components/Title";
 
 
 class App extends Component {
@@ -14,10 +17,14 @@ class App extends Component {
   render(){
     return(
       <div>
-        <Productos 
-          agregarAlCarro={()=> console.log("agregando")}
-          productos={this.state.productos}
-        />
+        <Navbar />
+        <Layout>
+          <Title/>
+          <Productos 
+            agregarAlCarro={()=> console.log("agregando")}
+            productos={this.state.productos}
+          />
+        </Layout>
       </div>
     )
   }

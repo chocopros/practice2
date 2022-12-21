@@ -1,11 +1,14 @@
 import { Component } from "react";
+import Button from "./Button";
+
 
 const style = {
     bodyCard: {
-        width: "220px",
-        border: "solid 1px rgb(0,0,0)",
+        width: "280px",
+        border: "solid 2px rgb(0,0,0, 0.2)",
         borderRadius: "15px",
-        padding: "20px"
+        padding: "20px",
+        boxShadow: '0 5px 5px rgb(0,0,0,0.3)'
     },
     body: {
         display: "flex",
@@ -14,20 +17,31 @@ const style = {
     },
     img: {
         width: "100%"
+    },
+    button:{
+        backgroundColor: 'rgb(0,0,0)',
+        color: '#fff',
+        borderStyle: 'none',
+        padding: '7px 14px',
+        borderRadius: '15px',
+        fontSize: '10px'
     }
 }
 
 export default class Producto extends Component {
     render(){
-        const { producto } = this.props
+        const { producto, agregarAlcarro } = this.props
         return(
             <div className="card" style={style.bodyCard}>
                 <h2>{producto.name}</h2>
-                <img style={style.img} src={producto.img}></img>
+                <img style={style.img} src={producto.img} alt={producto.name}></img>
 
                 <div style={style.body}>
-                    <p>{producto.price}</p>
-                    <button>Agregar</button>
+                    <p>{`Price: $${producto.price}`}</p>
+                    <Button
+                        style={style.button}
+                        onClick={() => agregarAlcarro(producto)}                   
+                    >Agregar al carro</Button>
                 </div>
 
             </div>
