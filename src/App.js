@@ -12,16 +12,26 @@ class App extends Component {
       {name: 'Tomate', price: 1500, img: "/img_productos/tomate.jpg"},
       {name: 'Arbejas', price: 2500, img: "/img_productos/arbejas.jpg"},
       {name: 'Lechuga', price: 1500, img: "/img_productos/lechuga.jpg"}
+    ],
+    carro: [
+      //!{name: 'Tomate', price: 1500, img: "/img_productos/tomate.jpg", cantidad: 1},
     ]
+  };
+
+  agregarAlCarro = (producto) => {
+    console.log(producto)
+  
   }
+
   render(){
+    console.log(this.state.carro)
     return(
       <div>
         <Navbar />
         <Layout>
           <Title/>
           <Productos 
-            agregarAlCarro={()=> console.log("agregando")}
+            agregarAlCarro={this.agregarAlCarro}
             productos={this.state.productos}
           />
         </Layout>

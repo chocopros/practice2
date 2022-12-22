@@ -30,7 +30,7 @@ const style = {
 
 export default class Producto extends Component {
     render(){
-        const { producto, agregarAlcarro } = this.props
+        const { producto, agregarAlCarro} = this.props
         return(
             <div className="card" style={style.bodyCard}>
                 <h2>{producto.name}</h2>
@@ -40,7 +40,7 @@ export default class Producto extends Component {
                     <p>{`Price: $${producto.price}`}</p>
                     <Button
                         style={style.button}
-                        onClick={() => agregarAlcarro(producto)}                   
+                        onClick={() => agregarAlCarro(producto)}                   
                     >Agregar al carro</Button>
                 </div>
 

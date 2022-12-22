@@ -12,6 +12,7 @@ const style = {
 
 export default class Productos extends Component {
     render(){
+        
 
         const { productos, agregarAlCarro } = this.props
         //console.log(productos)

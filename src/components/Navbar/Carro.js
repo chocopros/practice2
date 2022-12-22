@@ -1,4 +1,6 @@
 import { Component } from "react";
+import BubbleAlert from "./BubbleAlert";
+
 
 const style = {
     carro: {
@@ -9,14 +11,21 @@ const style = {
         borderRadius: '15px',
         fontSize: '30px',
         cursor: 'pointer'
+    },
+    bubble: {
+        position: 'relative',
+        left: 12,
+        top: 12,
     }
 }
 export default class Carro extends Component {
     render(){
         return(
             <div>
-                <span>
-                    
+                <span style={style.bubble}>
+                    <BubbleAlert
+                        value={15}
+                    />
                 </span>
                 <button style={style.carro}>
                     <i className='bx bxs-cart-download' ></i>
