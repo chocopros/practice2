@@ -20,8 +20,13 @@ class App extends Component {
 
   agregarAlCarro = (producto) => {
     console.log(producto)
-  
-  }
+    return this.setState({
+      carro: this.state.carro.concat({
+        ...producto,
+        cantidad: 1,
+      })
+    })
+  };
 
   render(){
     console.log(this.state.carro)
